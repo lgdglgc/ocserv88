@@ -6,8 +6,7 @@ export PATH
 #	System Required: Debian/Ubuntu
 #	Description: ocserv AnyConnect
 #	Version: 1.0.5
-#	Author: Toyo
-#	Blog: https://doub.io/vpnzy-7/
+#	Author: lgdglgc
 #=================================================
 sh_ver="1.0.5"
 file="/usr/local/sbin/ocserv"
@@ -15,7 +14,7 @@ conf_file="/etc/ocserv"
 conf="/etc/ocserv/ocserv.conf"
 passwd_file="/etc/ocserv/ocpasswd"
 log_file="/tmp/ocserv.log"
-ocserv_ver="0.11.8"
+ocserv_ver="1.1.6"
 PID_FILE="/var/run/ocserv.pid"
 
 Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
@@ -70,7 +69,7 @@ Get_ip(){
 }
 Download_ocserv(){
 	mkdir "ocserv" && cd "ocserv"
-	wget "ftp://ftp.infradead.org/pub/ocserv/ocserv-1.1.6.tar.xz"
+	wget "ftp://ftp.infradead.org/ocserv/download/ocserv-1.1.6.tar.xz"
   
 	[[ ! -s "ocserv-${ocserv_ver}.tar.xz" ]] && echo -e "${Error} ocserv 源码文件下载失败 !" && rm -rf "ocserv/" && rm -rf "ocserv-${ocserv_ver}.tar.xz" && exit 1
 	tar -xJf ocserv-ocserv-1.1.6.tar.xz && cd ocserv-1.1.6
@@ -82,7 +81,7 @@ Download_ocserv(){
 	
 	if [[ -e ${file} ]]; then
 		mkdir "${conf_file}"
-		wget --no-check-certificate -N -P "${conf_file}" "https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/other/ocserv.conf"
+		wget --no-check-certificate -N -P "${conf_file}" "https://raw.githubusercontent.com/lgdglgc/ocserv88/main/ocserv.conf"
 		[[ ! -s "${conf}" ]] && echo -e "${Error} ocserv 配置文件下载失败 !" && rm -rf "${conf_file}" && exit 1
 	else
 		echo -e "${Error} ocserv 编译安装失败，请检查！" && exit 1
