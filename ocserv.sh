@@ -42,7 +42,7 @@ check_sys(){
 	elif cat /proc/version | grep -q -E -i "centos|red hat|redhat"; then
 		release="centos"
     fi
-	#bit=`uname -m`
+	#bit=`uname -m
 }
 check_installed_status(){
 	[[ ! -e ${file} ]] && echo -e "${Error} ocserv 没有安装，请检查 !" && exit 1
@@ -69,9 +69,8 @@ Get_ip(){
 }
 Download_ocserv(){
 	mkdir "ocserv" && cd "ocserv"
-	wget "ftp://ftp.infradead.org/ocserv/download/ocserv-1.1.6.tar.xz"
-  
-	[[ ! -s "ocserv-${ocserv_ver}.tar.xz" ]] && echo -e "${Error} ocserv 源码文件下载失败 !" && rm -rf "ocserv/" && rm -rf "ocserv-${ocserv_ver}.tar.xz" && exit 1
+	wget "ftp://ftp.infradead.org/pub/ocserv/ocserv-${ocserv_ver}.tar.xz"
+        [[ ! -s "ocserv-${ocserv_ver}.tar.xz" ]] && echo -e "${Error} ocserv 源码文件下载失败 !" && rm -rf "ocserv/" && rm -rf "ocserv-${ocserv_ver}.tar.xz" && exit 1
 	tar -xJf ocserv-ocserv-1.1.6.tar.xz && cd ocserv-1.1.6
 	./configure
 	make
