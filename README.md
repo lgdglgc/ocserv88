@@ -1,5 +1,7 @@
 ##基于逗比大神的ocserv一键脚本,怀念大神
+
 ##升级最新版本ocserv 1.1.6
+
 ##自用一键脚本
 
 ``` bash
@@ -9,9 +11,11 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/lgdglgc/ocserv8
 
 
 ## 修改 /var/lib/ocserv/profile.xml 文件中的内容可以将服务器的配置推送给客户端 ###
+
 ```bash
 vi /var/lib/ocserv/profile.xml
 ```
+
 ```xml
 <ServerList>
                 <HostEntry>
