@@ -3,5 +3,5 @@
 自用一键脚本
 
 ``` bash
-wget -N --no-check-certificate https://raw.githubusercontent.com/lgdglgc/ocserv88/main/ocserv.sh && chmod +x ocserv.sh && bash ocserv.sh
+wget -N --no-check-certificate https://raw.githubusercontent.com/lgdglgc/ocserv88/master/ocserv.sh && chmod +x ocserv.sh && bash ocserv.sh
 ``` 
