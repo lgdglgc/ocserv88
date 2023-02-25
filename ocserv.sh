@@ -5,11 +5,11 @@ export PATH
 #=================================================
 #	System Required: Debian/Ubuntu
 #	Description: ocserv AnyConnect
-#	Version: 1.0.5
-#	Author: Toyo
-#	Blog: https://doub.io/vpnzy-7/
+#	Version: 1.8.8
+#	Author: lgdglgc
+#	Blog: 88888888888888888
 #=================================================
-sh_ver="1.0.5"
+sh_ver="1.8.8"
 file="/usr/local/sbin/ocserv"
 conf_file="/etc/ocserv"
 conf="/etc/ocserv/ocserv.conf"
