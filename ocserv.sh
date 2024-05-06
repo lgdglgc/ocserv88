@@ -448,7 +448,7 @@ Uninstall_ocserv(){
 over(){
 	update-rc.d -f ocserv remove
 	rm -rf /etc/init.d/ocserv
-	rm -rf "${conf_file}"
+	rm -rf "${conf_file}"p
 	rm -rf "${log_file}"
 	cd '/usr/local/bin' && rm -f occtl
 	rm -f ocpasswd
@@ -517,7 +517,7 @@ Update_Shell(){
 check_sys
 [[ ${release} != "debian" ]] && [[ ${release} != "ubuntu" ]] && echo -e "${Error} 本脚本不支持当前系统 ${release} !" && exit 1
 echo && echo -e " ocserv 一键安装管理脚本 ${Red_font_prefix}[v${sh_ver}]${Font_color_suffix}
-  -- ocserv一键安装脚本-by:lgdglgc--
+  -- update by:lgdglgc--
   
  ${Green_font_prefix}0.${Font_color_suffix} 升级脚本
 ————————————
