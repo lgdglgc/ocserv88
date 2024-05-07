@@ -1,4 +1,3 @@
-
 #!/usr/bin/env bash
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
@@ -74,6 +73,7 @@ Download_ocserv(){
 	wget "ftp://ftp.infradead.org/pub/ocserv/ocserv-${ocserv_ver}.tar.xz"
 	[[ ! -s "ocserv-${ocserv_ver}.tar.xz" ]] && echo -e "${Error} ocserv 源码文件下载失败 !" && rm -rf "ocserv/" && rm -rf "ocserv-${ocserv_ver}.tar.xz" && exit 1
 	tar -xJf ocserv-1.1.6.tar.xz && cd ocserv-1.1.6
+	./configure
 	make
 	make install
 	cd .. && cd ..
