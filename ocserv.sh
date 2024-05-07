@@ -7,7 +7,7 @@ export PATH
 #	System Required: Debian/Ubuntu
 #	Description: ocserv AnyConnect
 #	Version: 1.8.8
-#	Author: lgdglgc
+#	Author: SheepKeeperS
 #	Blog: 88888888888888888
 #=================================================
 sh_ver="1.8.8"
