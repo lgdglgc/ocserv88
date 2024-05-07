@@ -1,4 +1,3 @@
-
 #!/usr/bin/env bash
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
@@ -16,7 +15,7 @@ conf_file="/etc/ocserv"
 conf="/etc/ocserv/ocserv.conf"
 passwd_file="/etc/ocserv/ocpasswd"
 log_file="/tmp/ocserv.log"
-ocserv_ver="1.3.0"
+ocserv_ver="1.1.6"
 PID_FILE="/var/run/ocserv.pid"
 
 Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
@@ -71,9 +70,10 @@ Get_ip(){
 }
 Download_ocserv(){
 	mkdir "ocserv" && cd "ocserv"
-	wget "https://www.infradead.org/ocserv/download/ocserv-${ocserv_ver}.tar.xz"
+	wget "ftp://ftp.infradead.org/pub/ocserv/ocserv-${ocserv_ver}.tar.xz"
 	[[ ! -s "ocserv-${ocserv_ver}.tar.xz" ]] && echo -e "${Error} ocserv 源码文件下载失败 !" && rm -rf "ocserv/" && rm -rf "ocserv-${ocserv_ver}.tar.xz" && exit 1
-	tar -xJf ocserv-1.3.0.tar.xz && cd ocserv-1.3.0
+	tar -xJf ocserv-1.1.6.tar.xz && cd ocserv-1.1.6
+	./configure
 	make
 	make install
 	cd .. && cd ..
