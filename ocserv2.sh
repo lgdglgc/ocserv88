@@ -5,17 +5,17 @@ export PATH
 #=================================================
 #	System Required: Debian/Ubuntu
 #	Description: ocserv AnyConnect
-#	Version: 1.8.8
+#	Version: 8.8.8
 #	Author: SheepKeeperS
 #	Blog: 88888888888888888
 #=================================================
-sh_ver="1.8.8"
+sh_ver="8.8.8"
 file="/usr/local/sbin/ocserv"
 conf_file="/etc/ocserv"
 conf="/etc/ocserv/ocserv.conf"
 passwd_file="/etc/ocserv/ocpasswd"
 log_file="/tmp/ocserv.log"
-ocserv_ver="1.1.6"
+ocserv_ver="1.3.0"
 PID_FILE="/var/run/ocserv.pid"
 
 Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
@@ -72,7 +72,7 @@ Download_ocserv(){
 	mkdir "ocserv" && cd "ocserv"
 	wget "ftp://ftp.infradead.org/pub/ocserv/ocserv-${ocserv_ver}.tar.xz"
 	[[ ! -s "ocserv-${ocserv_ver}.tar.xz" ]] && echo -e "${Error} ocserv 源码文件下载失败 !" && rm -rf "ocserv/" && rm -rf "ocserv-${ocserv_ver}.tar.xz" && exit 1
-	tar -xJf ocserv-1.1.6.tar.xz && cd ocserv-1.1.6
+	tar -xJf ocserv-1.3.0.tar.xz && cd ocserv-1.3.0
 	./configure
 	make
 	make install
@@ -517,7 +517,7 @@ Update_Shell(){
 check_sys
 [[ ${release} != "debian" ]] && [[ ${release} != "ubuntu" ]] && echo -e "${Error} 本脚本不支持当前系统 ${release} !" && exit 1
 echo && echo -e " ocserv 一键安装管理脚本 ${Red_font_prefix}[v${sh_ver}]${Font_color_suffix}
-  -- update by:lgdglgc--
+  -- update by:SheepKeeperS--
   
  ${Green_font_prefix}0.${Font_color_suffix} 升级脚本
 ————————————
