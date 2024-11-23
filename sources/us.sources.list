@@ -14,3 +14,23 @@ deb-src http://deb.debian.org/debian bookworm-updates main contrib non-free non-
 deb http://deb.debian.org/debian bookworm-backports main contrib non-free non-free-firmware
 
 deb-src http://deb.debian.org/debian bookworm-backports main contrib non-free non-free-firmware
+
+deb http://ports.ubuntu.com/ubuntu-ports focal main restricted universe multiverse
+
+deb-src http://ports.ubuntu.com/ubuntu-ports focal main restricted universe multiverse
+
+deb http://ports.ubuntu.com/ubuntu-ports focal-updates main restricted universe multiverse
+
+deb-src http://ports.ubuntu.com/ubuntu-ports focal-updates main restricted universe multiverse
+
+deb http://ports.ubuntu.com/ubuntu-ports focal-backports main restricted universe multiverse
+
+deb-src http://ports.ubuntu.com/ubuntu-ports focal-backports main restricted universe multiverse
+
+deb http://ports.ubuntu.com/ubuntu-ports focal-security main restricted universe multiverse
+
+deb-src http://ports.ubuntu.com/ubuntu-ports focal-security main restricted universe multiverse
+
+deb http://archive.canonical.com/ubuntu focal partner
+
+deb-src http://archive.canonical.com/ubuntu focal partner
