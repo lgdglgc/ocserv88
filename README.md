@@ -7,8 +7,9 @@
 ``` bash
 wget -N --no-check-certificate https://raw.githubusercontent.com/lgdglgc/ocserv88/master/ocserv.sh && chmod +x ocserv.sh && bash ocserv.sh
 ```
-#############################################################################################
-#Debian/Ubuntu:依赖文件：
+###############################################################
+####################Debian/Ubuntu:依赖文件：####################
+###############################################################
 # Basic build tools
 ``` bash 
 apt-get install -y build-essential pkg-config
