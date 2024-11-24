@@ -5,17 +5,17 @@ export PATH
 #=================================================
 #	System Required: Debian/Ubuntu
 #	Description: ocserv AnyConnect
-#	Version: 1.3.0
+#	Version: 1.1.6
 #	Author: SheepKeeperS
 #	Blog: 88888888888888888888888
 #=================================================
-sh_ver="1.3.0"
+sh_ver="1.1.6"
 file="/usr/local/sbin/ocserv"
 conf_file="/etc/ocserv"
 conf="/etc/ocserv/ocserv.conf"
 passwd_file="/etc/ocserv/ocpasswd"
 log_file="/tmp/ocserv.log"
-ocserv_ver="1.3.0"
+ocserv_ver="1.1.6"
 PID_FILE="/var/run/ocserv.pid"
 
 Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
@@ -517,7 +517,7 @@ Update_Shell(){
 check_sys
 [[ ${release} != "debian" ]] && [[ ${release} != "ubuntu" ]] && echo -e "${Error} 本脚本不支持当前系统 ${release} !" && exit 1
 echo && echo -e " ocserv 一键安装管理脚本 ${Red_font_prefix}[v${sh_ver}]${Font_color_suffix}
-  -- Toyo | doub.io/vpnzy-7 --
+  -- Update by SheepKeeperS --
   
  ${Green_font_prefix}0.${Font_color_suffix} 升级脚本
 ————————————
