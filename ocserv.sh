@@ -5,11 +5,11 @@ export PATH
 #=================================================
 #	System Required: Debian/Ubuntu
 #	Description: ocserv AnyConnect
-#	Version: 8.8.8
+#	Version: 1.3.0
 #	Author: SheepKeeperS
 #	Blog: 88888888888888888
 #=================================================
-sh_ver="8.8.8"
+sh_ver="1.3.0"
 file="/usr/local/sbin/ocserv"
 conf_file="/etc/ocserv"
 conf="/etc/ocserv/ocserv.conf"
@@ -73,7 +73,7 @@ Download_ocserv(){
 	wget "ftp://ftp.infradead.org/pub/ocserv/ocserv-${ocserv_ver}.tar.xz"
 	[[ ! -s "ocserv-${ocserv_ver}.tar.xz" ]] && echo -e "${Error} ocserv 源码文件下载失败 !" && rm -rf "ocserv/" && rm -rf "ocserv-${ocserv_ver}.tar.xz" && exit 1
 	tar -xJf ocserv-1.3.0.tar.xz && cd ocserv-1.3.0
-	./configure
+    ./configure
 	make
 	make install
 	cd .. && cd ..
