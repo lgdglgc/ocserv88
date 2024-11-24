@@ -70,8 +70,8 @@ Get_ip(){
 }
 Download_ocserv(){
 	mkdir "ocserv" && cd "ocserv"
-	wget "https://www.infradead.org/ocserv/download/ocserv-${ocserv_ver}.tar.xz"
-	[[ ! -s "ocserv-${ocserv_ver}.tar.xz" ]] && echo -e "${Error} ocserv 源码文件下载失败 !" && rm -rf "ocserv/" && rm -rf "ocserv-${ocserv_ver}.tar.xz" && exit 1
+	wget "https://www.infradead.org/ocserv/download/ocserv-1.3.0.tar.xz"
+	[[ ! -s "ocserv-1.3.0.tar.xz" ]] && echo -e "${Error} ocserv 源码文件下载失败 !" && rm -rf "ocserv/" && rm -rf "ocserv-1.3.0.tar.xz" && exit 1
 	tar -xJf ocserv-1.3.0.tar.xz && cd ocserv-1.3.0
 	./configure
 	make
