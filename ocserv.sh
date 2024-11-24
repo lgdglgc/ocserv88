@@ -5,11 +5,11 @@ export PATH
 #=================================================
 #	System Required: Debian/Ubuntu
 #	Description: ocserv AnyConnect
-#	Version: 1.8.8
+#	Version: 1.2.4
 #	Author: SheepKeeperS
 #	Blog: 88888888888888888888888
 #=================================================
-sh_ver="1.8.8"
+sh_ver="1.2.4"
 file="/usr/local/sbin/ocserv"
 conf_file="/etc/ocserv"
 conf="/etc/ocserv/ocserv.conf"
