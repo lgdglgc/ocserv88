@@ -9,8 +9,9 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/lgdglgc/ocserv8
 ```
 
 ################################################################
+
 Debian/Ubuntu:依赖文件：
-###############################################################
+
 # Basic build tools
 ``` bash 
 apt-get install -y build-essential pkg-config
@@ -34,6 +35,7 @@ apt-get install -y libgnutls28-dev libev-dev
 apt-get install -y ronn
 ```
 #########################################################################
+
 ## 修改 /var/lib/ocserv/profile.xml 文件中的内容可以将服务器的配置推送给客户端 ###
 
 ```bash
