@@ -9,9 +9,7 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/lgdglgc/ocserv8
 ```
 
 ################################################################
-
 Debian/Ubuntu:依赖文件：
-
 ###############################################################
 # Basic build tools
 ``` bash 
