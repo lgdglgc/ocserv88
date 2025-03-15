@@ -40,8 +40,6 @@ check_sys(){
 		release="debian"
 	elif cat /proc/version | grep -q -E -i "ubuntu"; then
 		release="ubuntu"
-	elif cat /proc/version | grep -q -E -i "centos|red hat|redhat"; then
-		release="centos"
     fi
 	#bit=`uname -m`
 }
