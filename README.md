@@ -1,58 +1,41 @@
-##基于逗比大神的ocserv一键脚本,怀念大神！！！
+# ocserv88-main (AnyConnect 极速部署增强版)
 
-##升级最新版本ocserv 1.2.4
+本仓库是基于极其稳定可靠的 **ocserv 1.2.4** 经典版本打造的一键自动部署脚本。不仅完美复刻了原版安装的所有特性，更在此之上引入了诸多高级架构与分流优化，非常适合要求极致稳定性的生产环境使用。
 
-##自用一键脚本
+## ✨ 核心亮点与增强特性 (v1.2.4 稳定加强版)
 
-``` bash
+1. **绝对核心优势：完美兼容 OpenVPN 客户端**
+   - 1.2.4 版本的核心保留价值在于其拥有最新版 (1.4.2) 已经剔除的**老旧加密套件与协议兼容性**。
+   - 这使得它能够**完美兼容和支持 OpenVPN 客户端的接入**，而 1.4.2 等激进的新版本已经不再提供此类支持。如果你有这类老设备的兼容需求，1.2.4 是你唯一的选择。
+
+2. **同频最新版：独家智能路由切换系统**
+   - 完美移植了 1.4.2 版本的先进路由调度系统，在主菜单新增**第 10 项**：“切换 路由模式”。
+   - 彻底摆脱手动修改路由规则的痛苦。支持**一键在「全局代理」和「国内直连分流」之间无缝切换**。
+   - 分流规则库采用独立剥离的 `cn_routes.txt`（包含 200+ 高精准度国内 IP 段），配置无损叠加，绝对不干扰自定义的端口等基础设定。
+
+3. **定制化专属品牌 UI**
+   - 客户端连接成功后，控制台横幅 (Banner) 将展示独特的定制化欢迎标语：  
+     `🌟 欢迎使用 Cisco AnyConnect 🌟 | 微信客服：lgdglgc89 | 淘宝店铺：喀秋莎电玩`
+   - 全自动下发 `profile.xml` 客户端节点列表，有效提升用户体验。
+
+4. **稳定可靠的原生功能**
+   - 经典的编译安装模式与可靠的内存管理，在极高负载下不易产生内存泄露。
+   - 自动拉取源码编译部署，内置 Let's Encrypt 受信任域名 SSL 证书的申请逻辑，也可 fallback 到本地自签证书。
+   - 提供可视化的多用户管理面板（添加、删除、禁用账号）。
+
+## 🚀 部署与使用
+
+执行以下命令直接拉取并运行增强版一键脚本：
+
+```bash
 wget -N --no-check-certificate https://raw.githubusercontent.com/lgdglgc/ocserv88/master/ocserv.sh && chmod +x ocserv.sh && bash ocserv.sh
 ```
 
+**主菜单快捷操作：**
+- 输入 `1`：执行全新安装。
+- 输入 `10`：执行路由模式热切换。
+- 输入 `6`：管理连接账号。
+- 输入 `8`：可视化修改端口及配置。
 
-################################################################
-
- ＃＃Debian/Ubuntu:依赖文件：
-
-# Basic build tools
-``` bash 
-apt-get install -y build-essential pkg-config
-```
-# Required
-``` bash 
-apt-get install -y libgnutls28-dev libev-dev
-```
-# Optional functionality and testing
-``` bash
- apt-get install -y libpam0g-dev liblz4-dev libseccomp-dev \
-	libreadline-dev libnl-route-3-dev libkrb5-dev libradcli-dev \
-	libcurl4-gnutls-dev libcjose-dev libjansson-dev liboath-dev \
-	libprotobuf-c-dev libtalloc-dev libllhttp-dev protobuf-c-compiler \
-	gperf iperf3 lcov libuid-wrapper libpam-wrapper libnss-wrapper \
-	libsocket-wrapper gss-ntlmssp haproxy iputils-ping freeradius \
-	gawk gnutls-bin iproute2 yajl-tools tcpdump
-```
-# For manpages
-``` bash 
-apt-get install -y ronn
-```
-#########################################################################
-
-## 修改 /var/lib/ocserv/profile.xml 文件中的内容可以将服务器的配置推送给客户端 ###
-
-```bash
-vi /var/lib/ocserv/profile.xml
-```
-
-```xml
-<ServerList>
-                <HostEntry>
-                    <HostName>服务器描述1</HostName>
-                    <HostAddress>server1_ipaddress:port</HostAddress>
-                </HostEntry>
-                <HostEntry>
-                    <HostName>服务器描述2</HostName>
-                    <HostAddress>server2_ipaddress:port</HostAddress>
-                </HostEntry>
-</ServerList>
-```
-
+---
+*Developed & Optimized by SheepKeeperS & lgdglgc*
