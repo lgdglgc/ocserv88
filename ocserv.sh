@@ -145,23 +145,13 @@ Installation_dependency(){
 	[[ ! -e "/dev/net/tun" ]] && echo -e "${Error} 你的VPS没有开启TUN，请联系IDC或通过VPS控制面板打开TUN/TAP开关 !" && exit 1
 	if [[ ${release} = "centos" ]]; then
 		echo -e "${Error} 本脚本不支持 CentOS 系统 !" && exit 1
-	elif [[ ${release} = "debian" ]]; then
-		cat /etc/issue |grep 9\..*>/dev/null
-		if [[ $? = 0 ]]; then
-			apt-get update
-			apt-get install vim net-tools pkg-config build-essential libgnutls28-dev libwrap0-dev liblz4-dev libseccomp-dev libreadline-dev libnl-nf-3-dev libev-dev gnutls-bin -y
-		else
-			mv /etc/apt/sources.list /etc/apt/sources.list.bak
-			wget --no-check-certificate -O "/etc/apt/sources.list" "https://raw.githubusercontent.com/lgdglgc/ocserv88/master/sources/us.sources.list"
-			apt-get update
-			apt-get install vim net-tools pkg-config build-essential libgnutls28-dev libwrap0-dev liblz4-dev libseccomp-dev libreadline-dev libnl-nf-3-dev libev-dev gnutls-bin -y
-			rm -rf /etc/apt/sources.list
-			mv /etc/apt/sources.list.bak /etc/apt/sources.list
-			apt-get update
-		fi
-	else
+	elif [[ ${release} = "debian" ]] || [[ ${release} = "ubuntu" ]]; then
+		echo -e "${Info} 正在更新软件源并安装编译依赖..."
 		apt-get update
 		apt-get install vim net-tools pkg-config build-essential libgnutls28-dev libwrap0-dev liblz4-dev libseccomp-dev libreadline-dev libnl-nf-3-dev libev-dev gnutls-bin -y
+		if [[ $? -ne 0 ]]; then
+			echo -e "${Error} 依赖安装失败，请检查网络或更换合适的 apt 源！" && exit 1
+		fi
 	fi
 }
 Install_ocserv(){
